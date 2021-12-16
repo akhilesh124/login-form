@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .container{ margin: 100px auto; height:400px;width:300px;padding:15px; background-color: rgb(58, 224, 114); 
+    }
+    h3{ text-align: center;}
+    input{ margin: 10px auto;outline:0;}
+    button{margin: 10px auto;}
+    p{text-align: center;padding:10px;}
+    
+</style>
+</head>
+<body>
+    <div class="container">
+        <h3>Login form</h3>
+        <hr>
+       
+        User name:&nbsp;&nbsp;<input type="text" id="userName">
+       Password : &nbsp; <input type="password" id="password">
+        <hr>
+      
+       
+        <button id="login">Login </button>
+   
+        <p id="error"></p>
+<hr>
+    </div>
+    <script>
+        var pass=123;
+        var user="akhil";
+        var counter=0;
+        function login(){
+            if(counter<3){
+            var userName=document.getElementById("userName").value;
+            var password=document.getElementById("password").value;
+            if(userName==user && password==pass)
+            {
+             document.getElementById("error").innerHTML="loggedIn";
+            }
+             else
+             {
+                 counter++ ;
+                 document.getElementById("error").innerHTML="User Name or password is incorrect";
+             }
+        }
+    
+    else{
+        document.getElementById("error").innerHTML="maximum attempt reached";
+    }
+}
+    document.getElementById("login").addEventListener("click" , login);
+
+    </script>
+    
+</body>
+</html>
